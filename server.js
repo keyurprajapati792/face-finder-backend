@@ -68,6 +68,10 @@ function getMimeType(ext) {
   }
 }
 
+app.get("/", (req, res) => {
+  res.send("Server Connected");
+});
+
 const Image = mongoose.model("Image", imageSchema);
 // Upload Endpoint
 app.post("/upload", upload.single("image"), async (req, res) => {
